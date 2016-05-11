@@ -1,0 +1,536 @@
+{
+    "appKeys": {
+        "KEY_CONDITIONS": 1,
+        "KEY_DATE": 3,
+        "KEY_TEMPERATURE": 0,
+        "KEY_UNITS": 2
+    },
+    "capabilities": [
+        "location",
+        "configurable"
+    ],
+    "companyName": "aspowart6@gmail.com",
+    "enableMultiJS": true,
+    "longName": "Pokemon RSE Watchface",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/battlesceneclouds_round.png",
+                "name": "BACKGROUND_CLOUDS_ROUND",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/battlesceneclear_round.png",
+                "name": "BACKGROUND_CLEAR_ROUND",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/battlescenesnow_round.png",
+                "name": "BACKGROUND_SNOW_ROUND",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/battlescenerain_round.png",
+                "name": "BACKGROUND_RAIN_ROUND",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/bg_clear_round.png",
+                "name": "BACKGROUND_64_ROUND",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/pokeball.png",
+                "menuIcon": true,
+                "name": "POKEBALL",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/kyogre_front.png",
+                "name": "POKEMONFRONT_34",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/latias_front.png",
+                "name": "POKEMONFRONT_33",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/beldum_front.png",
+                "name": "POKEMONFRONT_32",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/absol_front.png",
+                "name": "POKEMONFRONT_31",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/aggron_front.png",
+                "name": "POKEMONFRONT_30",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/lairon_front.png",
+                "name": "POKEMONFRONT_29",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/aron_front.png",
+                "name": "POKEMONFRONT_28",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/kirlia_front.png",
+                "name": "POKEMONFRONT_27",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/mudkip_front.png",
+                "name": "POKEMONFRONT_26",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/ho-oh_front.png",
+                "name": "POKEMONFRONT_25",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/lugia_front.png",
+                "name": "POKEMONFRONT_24",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/entei_front.png",
+                "name": "POKEMONFRONT_23",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/raikou_front.png",
+                "name": "POKEMONFRONT_22",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/scizor_front.png",
+                "name": "POKEMONFRONT_21",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/espeon_front.png",
+                "name": "POKEMONFRONT_20",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/yanma_front.png",
+                "name": "POKEMONFRONT_19",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/furret_front.png",
+                "name": "POKEMONFRONT_18",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/mew_front.png",
+                "name": "POKEMONFRONT_17",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/mewtwo_front.png",
+                "name": "POKEMONFRONT_16",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/eevee_front.png",
+                "name": "POKEMONFRONT_15",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/lapras_front.png",
+                "name": "POKEMONFRONT_14",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/tauros_front.png",
+                "name": "POKEMONFRONT_13",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/seadra_front.png",
+                "name": "POKEMONFRONT_12",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/onix_front.png",
+                "name": "POKEMONFRONT_11",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/ponyta_front.png",
+                "name": "POKEMONFRONT_9",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/abra_front.png",
+                "name": "POKEMONFRONT_8",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/meowth_front.png",
+                "name": "POKEMONFRONT_7",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/paras_front.png",
+                "name": "POKEMONFRONT_6",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/zubat_front.png",
+                "name": "POKEMONFRONT_5",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/vulpix_front.png",
+                "name": "POKEMONFRONT_4",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/raichu_front.png",
+                "name": "POKEMONFRONT_3",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Arbok_front.png",
+                "name": "POKEMONFRONT_2",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/kyogre_back.png",
+                "name": "POKEMONBACK_34",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/latias_back.png",
+                "name": "POKEMONBACK_33",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/beldum_back.png",
+                "name": "POKEMONBACK_32",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/absol_back.png",
+                "name": "POKEMONBACK_31",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/aggron_back.png",
+                "name": "POKEMONBACK_30",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/lairon_back.png",
+                "name": "POKEMONBACK_29",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/aron_back.png",
+                "name": "POKEMONBACK_28",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/kirlia_back.png",
+                "name": "POKEMONBACK_27",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/mudkip_back.png",
+                "name": "POKEMONBACK_26",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/ho-oh_back.png",
+                "name": "POKEMONBACK_25",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/lugia_back.png",
+                "name": "POKEMONBACK_24",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/entei_back.png",
+                "name": "POKEMONBACK_23",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/raikou_back.png",
+                "name": "POKEMONBACK_22",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/scizor_back.png",
+                "name": "POKEMONBACK_21",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/espeon_back.png",
+                "name": "POKEMONBACK_20",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/yanma_back.png",
+                "name": "POKEMONBACK_19",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/furret_back.png",
+                "name": "POKEMONBACK_18",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/mew_back.png",
+                "name": "POKEMONBACK_17",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/mewtwo_back.png",
+                "name": "POKEMONBACK_16",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/eevee_back.png",
+                "name": "POKEMONBACK_15",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/lapras_back.png",
+                "name": "POKEMONBACK_14",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/tauros_back.png",
+                "name": "POKEMONBACK_13",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/seadra_back.png",
+                "name": "POKEMONBACK_12",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/onix_back.png",
+                "name": "POKEMONBACK_11",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/gengar_back.png",
+                "name": "POKEMONBACK_10",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/ponyta_back.png",
+                "name": "POKEMONBACK_9",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/abra_back.png",
+                "name": "POKEMONBACK_8",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/meowth_back.png",
+                "name": "POKEMONBACK_7",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/paras_back.png",
+                "name": "POKEMONBACK_6",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/zubat_back.png",
+                "name": "POKEMONBACK_5",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/vulpix_back.png",
+                "name": "POKEMONBACK_4",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/raichu_back.png",
+                "name": "POKEMONBACK_3",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/gengar_front.png",
+                "name": "POKEMONFRONT_10",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/6.png",
+                "name": "POKEMONBACK_2",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/battlescene_clouds.png",
+                "name": "BATTLE_SCENE_CLOUDS",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/slp.png",
+                "name": "SLP_ICON",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/paralysis.png",
+                "name": "PRLYZ_ICON",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/front1.png",
+                "name": "POKEMONFRONT_1",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/1.png",
+                "name": "POKEMONBACK_1",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "fonts/pkmnrs.ttf",
+                "name": "POKEMON_12",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "fonts/pkmnrs.ttf",
+                "name": "POKEMON_24",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "fonts/pkmnrs.ttf",
+                "name": "POKEMON_35",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "images/battlesceneclear.png",
+                "name": "BATTLE_SCENE_CLEAR",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/battlescenesnow.png",
+                "name": "BATTLE_SCENE_SNOW",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/battlescenerain.png",
+                "name": "BATTLE_SCENE_RAIN",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/battlescene64.png",
+                "name": "BATTLE_SCENE_64",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "RSE Watch",
+    "targetPlatforms": [
+        "basalt",
+        "chalk"
+    ],
+    "uuid": "3c04751a-0d02-491a-8453-05372dcb49cb",
+    "versionLabel": "2.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
