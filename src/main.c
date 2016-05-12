@@ -3,6 +3,7 @@
 #define KEY_CONDITIONS 1
 #define KEY_UNITS 2
 #define KEY_DATE 3
+#define KEY_STEPS 4
 #define SETTINGS_KEY 6
 
 static Window *s_main_window;
@@ -41,6 +42,7 @@ typedef struct persist {
     int opplevel;
     bool units_use_f;
     bool date_format_us;
+    int steps_goal;
 } __attribute__((__packed__)) persist;
 
 persist settings = {
@@ -52,6 +54,7 @@ persist settings = {
   .opplevel = 10,
   .units_use_f = true,
   .date_format_us = true,
+  .steps_goal = 1000,
 };
 bool already_read = false;
 static uint32_t background_list[5] = {RESOURCE_ID_BATTLE_SCENE_CLEAR, RESOURCE_ID_BATTLE_SCENE_64, RESOURCE_ID_BATTLE_SCENE_CLOUDS, RESOURCE_ID_BATTLE_SCENE_RAIN, RESOURCE_ID_BATTLE_SCENE_SNOW};
@@ -153,17 +156,62 @@ static void get_background_image(char conditions_buffer[]){
   settings.bg = bg_number;
 }
 
+
+static bool check_for_health(){
+  #if defined(PBL_HEALTH)
+  // Use the step count metric
+  HealthMetric metric = HealthMetricStepCount;
+
+  // Create timestamps for midnight (the start time) and now (the end time)
+  time_t start = time_start_of_today();
+  time_t end = time(NULL);
+
+  // Check step data is available
+  HealthServiceAccessibilityMask mask = health_service_metric_accessible(metric, 
+                                                                    start, end);
+  bool any_data_available = mask & HealthServiceAccessibilityMaskAvailable;
+  #else
+  // Health data is not available here
+  bool any_data_available = false;
+  #endif
+  return any_data_available;
+}
+
+
 static void background_update_proc(Layer *layer, GContext *ctx) {
   //get new bitmap and store to memory, then set as background
   get_background_image(conditions_buffer);
   //graphics_draw_bitmap_in_rect(ctx, s_background_bitmap, GRect(0,0,144,168));
   graphics_draw_bitmap_in_rect(ctx, s_background_bitmap, layer_get_bounds(layer));
   
+  /*
   //get time and draw exp bar
   time_t temp = time(NULL);
   struct tm *tick_time = localtime(&temp);
   int s_hour = tick_time->tm_hour;
   int width = (int)(float)((float)s_hour*2.0F);
+  */
+  
+  
+  bool health_available = check_for_health();
+  HealthMetric metric = HealthMetricStepCount;
+  time_t start = time_start_of_today();
+  time_t end = time(NULL);
+
+  // Check the metric has data available for today
+  HealthServiceAccessibilityMask mask = health_service_metric_accessible(metric, 
+    start, end);
+
+  int steps_today = 0;
+  if(mask & HealthServiceAccessibilityMaskAvailable) {
+    // Data is available!
+    steps_today = (int)health_service_sum_today(metric);
+  } else {
+    // No data recorded yet today
+    APP_LOG(APP_LOG_LEVEL_ERROR, "Data unavailable!");
+  }
+  int width = (int)(((float)(steps_today % settings.steps_goal)/(float)settings.steps_goal) * 48.0F);
+  
   
   graphics_context_set_fill_color(ctx, GColorElectricBlue);
   graphics_fill_rect(ctx, GRect(PBL_IF_ROUND_ELSE(114, 88), PBL_IF_ROUND_ELSE(130,118), width, 2), 0, GCornerNone);
@@ -301,6 +349,7 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
   Tuple *conditions_tuple = dict_find(iterator, KEY_CONDITIONS);
   Tuple *units_tuple = dict_find(iterator, KEY_UNITS);
   Tuple *date_tuple = dict_find(iterator, KEY_DATE);
+  Tuple *steps_tuple = dict_find(iterator, KEY_STEPS);
 
   // Determine if receiving weather or configuration
   if(temp_tuple && conditions_tuple) {
@@ -328,7 +377,9 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
     get_new_sprite(temp, false);
     bitmap_layer_set_bitmap(s_frontsprite_layer, s_frontsprite_bitmap);
   }
-  else if(units_tuple && date_tuple){
+  else if(units_tuple && date_tuple && steps_tuple){
+  //else if(units_tuple && date_tuple){
+    settings.steps_goal = (int)steps_tuple->value->int32;
     // Set old units to compare if need to change temp
     old_units = settings.units_use_f;
     if (units_tuple && units_tuple->value->int8 > 0){
@@ -346,6 +397,7 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
     //APP_LOG(APP_LOG_LEVEL_INFO, "Units use f?: %d, Date use mm/dd?: %d", settings.units_use_f, settings.date_format_us);
     update_date();
     update_opp_level();
+    layer_mark_dirty(s_background_layer);
   }  
 }
 

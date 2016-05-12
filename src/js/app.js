@@ -13,10 +13,12 @@ Pebble.addEventListener('webviewclosed', function(e) {
     var api_key = configData['API_KEY'];
     var temp_units = configData['UNITS'];
     var date_format = configData['DATE_FORMAT'];
+    //var steps_goal = configData['STEPS_GOAL'];
     if (api_key !== ''){
       localStorage.setItem('apikey', api_key);
       localStorage.setItem('tempunits', temp_units);
       localStorage.setItem('dateformat', date_format);
+      //localStorage.setItem('stepsgoal', steps_goal);
       //console.log('Submitted API key is: ' + api_key);
       console.log('Submitted units is: ' + temp_units);
       console.log('Submitted date format is: ' + date_format);
@@ -24,6 +26,7 @@ Pebble.addEventListener('webviewclosed', function(e) {
       var dictionary = {
         "KEY_UNITS": temp_units,
         "KEY_DATE": date_format
+        //"KEY_GOAL": steps_goal
       };
 
       // Send to Pebble

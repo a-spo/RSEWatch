@@ -2,12 +2,14 @@
     "appKeys": {
         "KEY_CONDITIONS": 1,
         "KEY_DATE": 3,
+        "KEY_STEPS": 4,
         "KEY_TEMPERATURE": 0,
         "KEY_UNITS": 2
     },
     "capabilities": [
         "location",
-        "configurable"
+        "configurable",
+        "health"
     ],
     "companyName": "aspowart6@gmail.com",
     "enableMultiJS": true,
@@ -529,7 +531,7 @@
         "chalk"
     ],
     "uuid": "3c04751a-0d02-491a-8453-05372dcb49cb",
-    "versionLabel": "2.0",
+    "versionLabel": "2.5",
     "watchapp": {
         "watchface": true
     }
